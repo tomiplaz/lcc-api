@@ -28,3 +28,18 @@ sequelize
   .authenticate()
   .then(() => console.log('Connected to the database!'))
   .catch(err => console.log('Error connecting to database:', err))
+
+const Product = sequelize.define('product', {
+  name: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  description: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  price: {
+    type: Sequelize.DECIMAL,
+    allowNull: false
+  }
+})
