@@ -21,3 +21,5 @@ Product.init({
   sequelize,
   modelName: 'product'
 })
+
+module.exports = { Product }
