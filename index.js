@@ -1,9 +1,12 @@
 'use strict'
 
 const app = require('express')()
+const cors = require('cors')
 const { API_PORT } = process.env
 
 require('/src/sequelize')
+
+app.use(cors())
 
 app.get('/', (req, res) => {
   res.send('Hello world!')
