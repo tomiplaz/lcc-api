@@ -7,11 +7,11 @@ const stripe = require('stripe')(STRIPE_SECRET_KEY)
 
 require('/src/sequelize')
 
-app.use(require('cors'))
+app.use(require('cors')())
 app.use(require('body-parser').text())
 
 app.get('/', (req, res) => {
-  res.send('Hello world!')
+  res.send('LCC API')
 })
 
 app.get('/products', async (req, res) => {
@@ -21,7 +21,7 @@ app.get('/products', async (req, res) => {
     const products = await Product.findAll()
     res.send(products)
   } catch (err) {
-    console.log('Error querying for Products at GET /products:', err)
+    console.log('Error querying for Products:', err)
   }
 })
 
