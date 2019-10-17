@@ -27,13 +27,14 @@ app.get('/products', async (req, res) => {
 
 app.post('/charge', async (req, res) => {
   try {
-    const { status } = await stripe.charges.create({
+    const { id, status } = await stripe.charges.create({
       amount: 4850,
       currency: 'eur',
       description: 'LCC charge',
       source: req.body
     })
 
+    console.log('Charge created:', id)
     res.json({ status })
   } catch (err) {
     console.log('Error creating a charge:', err)
