@@ -16,7 +16,11 @@ Product.init({
   price: {
     type: Sequelize.DECIMAL,
     allowNull: false
-  }
+  },
+  image: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
 }, {
   sequelize,
   modelName: 'product'

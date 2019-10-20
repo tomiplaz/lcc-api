@@ -13,7 +13,8 @@ async function initDb() {
       const productData = {
         name: 'Product',
         description: 'Lorem ipsum dolor sit amet',
-        price: 1
+        price: 1,
+        image: 'images/products/product.jpg'
       }
 
       await Product.create({ ...productData, price: 9.95 })
